@@ -1,0 +1,138 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    padding-top: 10px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    padding-top: 15px;
+    z-index: 1000;
+}
+
+.h1, .h2 {
+    font-size: x-large;
+    padding: 0 30px;
+    font-weight: 300;
+}
+
+.image img {
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.pics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 550px);
+    gap: 15px;
+    padding-top: 80px;
+    margin: 0px 60px;
+    margin-bottom: 50px;
+}
+
+.item {
+    font-size: 24px;
+}
+
+.i1 {
+    width: 100%;
+}
+
+.ih {
+    font-size: x-large;
+    width: 100%;
+    text-align: center;
+}
+
+.ip {
+    font-size: medium;
+    width: 100%;
+    text-align: center;
+}
+
+.foot {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.f {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    flex-wrap: wrap;
+}
+
+.foot:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Slide-in Menu Styles */
+.menu-checkbox {
+    display: none;
+}
+
+.slide-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: left 0.5s ease;
+    z-index: 999;
+    padding-top: 60px;
+}
+
+.slide-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.slide-menu ul li {
+    padding: 8px 16px;
+    text-align: left;
+}
+
+.slide-menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Toggle the menu */
+.menu-checkbox:checked ~ .slide-menu {
+    left: 0;
+}
+
+.menu-checkbox:checked ~ .container .header .image img {
+    transform: rotate(90deg); /* Optional rotation for effect */
+    transition: transform 0.3s ease;
+}
+
+.menu-checkbox:not(:checked) ~ .slide-menu {
+    left: -250px;
+}
